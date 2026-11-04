@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Biorremediacion.sln"
+    "dotnet.defaultSolution": "Biorremediacion_UTPL.sln"
 }
