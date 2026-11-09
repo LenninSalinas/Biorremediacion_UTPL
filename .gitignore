@@ -1,12 +1,14 @@
-# Unity
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
-/[Mm]emoryCaptures/
+# Unity (rutas relativas a la carpeta del proyecto, no a la raíz del repo)
+simulador/Biorremediacion_UTPL/[Ll]ibrary/
+simulador/Biorremediacion_UTPL/[Tt]emp/
+simulador/Biorremediacion_UTPL/[Oo]bj/
+simulador/Biorremediacion_UTPL/[Bb]uild/
+simulador/Biorremediacion_UTPL/[Bb]uilds/
+simulador/Biorremediacion_UTPL/[Ll]ogs/
+simulador/Biorremediacion_UTPL/[Uu]ser[Ss]ettings/
+simulador/Biorremediacion_UTPL/[Mm]emoryCaptures/
+simulador/Biorremediacion_UTPL/[Rr]ecordings/
+simulador/Biorremediacion_UTPL/.utmp/
 *.pidb.meta
 *.pdb.meta
 *.mdb.meta
@@ -34,6 +36,7 @@ yarn-error.log*
 # SO e IDEs
 .DS_Store
 Thumbs.db
+desktop.ini
 .vs/
 .vscode/
 *.csproj
