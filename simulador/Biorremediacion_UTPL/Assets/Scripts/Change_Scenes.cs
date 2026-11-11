@@ -21,7 +21,7 @@ public class Change_Scenes : MonoBehaviour
         }
 
         // 2. Con el terreno ya cargado, traemos de inmediato al jugador de forma Aditiva
-        AsyncOperation cargaJugador = SceneManager.LoadSceneAsync("SampleScene 1", LoadSceneMode.Additive);
+        AsyncOperation cargaJugador = SceneManager.LoadSceneAsync("SampleScene", LoadSceneMode.Additive);
         while (!cargaJugador.isDone)
         {
             yield return null;
