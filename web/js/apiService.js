@@ -37,9 +37,10 @@ async function loginWeb(username, password) {
         localStorage.setItem("userName", username);
         localStorage.setItem("userFirstName", nombreCompleto);
         localStorage.setItem("userRole", data.role.code);
-        localStorage.setItem("userGenere", data.genere);
-        localStorage.setItem("userIdentification", data.identification);
         localStorage.setItem("userPermissions", permissions);
+        // Ya no se guardan la cédula ni el género: son datos personales que la web no necesita.
+        localStorage.removeItem("userGenere");
+        localStorage.removeItem("userIdentification");
 
         console.log("!Login exitoso! Datos guardados.");
         return true;
