@@ -13,6 +13,7 @@ Esta carpeta reúne la documentación técnica del proyecto.
 ## Documentos
 
 - [Limpieza del proyecto](limpieza-proyecto.md): elementos eliminados (escenas, scripts, paquetes y versiones compiladas) y cómo se comprobó que no se usaban.
+- [Publicación en itch.io](publicacion-itchio.md): cómo generar la build web, empaquetarla y publicarla en la página institucional.
 
 ## Requisitos para trabajar en el proyecto
 
