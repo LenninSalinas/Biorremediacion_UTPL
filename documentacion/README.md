@@ -7,7 +7,7 @@ Esta carpeta reúne la documentación técnica del proyecto.
 | Carpeta | Contenido |
 |---|---|
 | `simulador/` | Proyecto de Unity 6 (`simulador/Biorremediacion_UTPL`). |
-| `web/` | Página de inicio de sesión (Express) desplegada en Vercel. |
+| `web/` | Página de inicio de sesión (Express) desplegada en Vercel. El frontend está en `web/public/` y el servidor en `web/server.js`. |
 | `documentacion/` | Documentación técnica, manuales y decisiones del proyecto. |
 
 ## Documentos
@@ -29,6 +29,18 @@ La web necesita estas variables. En local van en `web/.env` (ignorado por Git; v
 |---|---|
 | `API_URL` | URL del servicio de autenticación. |
 | `AUTH_TOKEN` | Token de autorización del servicio. **Nunca** se escribe en el código. |
+
+## Despliegue de la web en Vercel
+
+| Ajuste del proyecto en Vercel | Valor |
+|---|---|
+| Root Directory | `web` |
+| Framework Preset | Express |
+| Rama de producción | `main` (cada rama y cada PR genera una versión de prueba *Preview*) |
+
+Vercel ejecuta `server.js` como una función y sirve los archivos de `public/` desde su CDN. Por eso todo el frontend (HTML, CSS, JS e imágenes) **tiene que estar dentro de `public/`**: con Express, Vercel ignora `express.static()`. Las cabeceras de seguridad de los archivos estáticos se definen en `web/vercel.json`.
+
+Para probar en local: `npm install` y `node server.js` dentro de `web/`, y abrir `http://localhost:3000`.
 
 ## Flujo de trabajo
 

@@ -97,8 +97,9 @@ No se eliminó nada: la carpeta `web/node_modules/` no estaba en el repositorio 
 | Archivo | Cambio |
 |---|---|
 | `.gitattributes` | Se reemplazaron `web/** -filter -diff -merge` y `web/** binary` por reglas que solo marcan las imágenes como binarias, para que los cambios del código web se vean en los pull requests. |
-| `web/js/apiService.js` | Se dejó de guardar el género y la cédula del usuario en `localStorage`. |
-| `web/server.js` | Se reemplazó `express.static(__dirname)`, que publicaba toda la carpeta (incluidos `server.js` y `package.json`), por la publicación solo de `index.html`, `css/`, `js/` e `imgs/`. |
+| `web/public/js/apiService.js` | Se dejó de guardar el género y la cédula del usuario en `localStorage`. |
+| `web/server.js` y `web/public/` | Se reemplazó `express.static(__dirname)`, que publicaba toda la carpeta (incluidos `server.js` y `package.json`). El frontend (`index.html`, `css/`, `js/` e `imgs/`) se movió a `web/public/`, que es lo único que se publica y la carpeta que Vercel sirve desde su CDN. |
+| `web/vercel.json` | Se quitó la redirección de `/api/*` a `server.js`, que con el preset Express ya no hace falta, y se añadieron las cabeceras de seguridad para los archivos estáticos. |
 | `simulador/.../Assets/Scripts/Change_Scenes.cs` | Se actualizó el nombre de la escena cargada de `"SampleScene 1"` a `"SampleScene"` tras su renombre. |
 
 ## Cómo recuperar un elemento
