@@ -106,8 +106,15 @@
 # ============================================
 # Excepciones: NO usar LFS en la web (Vercel)
 # ============================================
-web/** -filter -diff -merge
-web/** binary
+# Todo web/ va directo a Git (sin LFS) para que Vercel lo lea.
+# El código (js, html, css, json) queda como texto para poder revisar sus cambios en los PR.
+web/** -filter
+web/**/*.png binary
+web/**/*.jpg binary
+web/**/*.jpeg binary
+web/**/*.gif binary
+web/**/*.ico binary
+web/**/*.webp binary
 
 # Git LFS: datos binarios de Unity (terrenos e iluminación)
 simulador/**/Terrain/data/*.asset filter=lfs diff=lfs merge=lfs -text
