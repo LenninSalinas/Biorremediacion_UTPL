@@ -17,11 +17,10 @@ app.use((req, res, next) => {
 
 app.use(express.json({ limit: '10kb' })); // Permite leer los datos JSON del frontend
 
-// Solo se publican las carpetas del frontend. server.js, package.json y .env NO se sirven.
-app.use('/css', express.static(path.join(__dirname, 'css')));
-app.use('/js', express.static(path.join(__dirname, 'js')));
-app.use('/imgs', express.static(path.join(__dirname, 'imgs')));
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
+// El frontend vive en public/. Solo se publica esa carpeta: server.js, package.json y .env NO se sirven.
+// En Vercel esta línea se ignora: la CDN de Vercel sirve public/ directamente.
+// Se mantiene para que la web también funcione al ejecutarla en local con `node server.js`.
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Límite de intentos de inicio de sesión por IP (evita ataques de fuerza bruta)
 const MAX_INTENTOS = 10;
