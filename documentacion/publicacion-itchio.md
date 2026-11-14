@@ -17,6 +17,15 @@ Ya está guardada en `ProjectSettings` y no hay que tocarla:
 | Compression Format | **Gzip** | itch.io no envía las cabeceras `Content-Encoding` que necesita Brotli. |
 | Decompression Fallback | **Activado** | El navegador descomprime los archivos aunque el servidor no envíe cabeceras. |
 | Resolución por defecto | 960 × 600 | Debe coincidir con el tamaño del visor en itch.io. |
+| WebGL Template | **UTPL** (`Assets/WebGLTemplates/UTPL`) | Corrige un fallo de Unity 6000.0.38f1 (ver abajo). |
+
+### Plantilla web UTPL
+
+Es una copia de la plantilla *Default* de Unity con un solo cambio en `index.html`: cuando el juego no usa hilos, se define `workerUrl` apuntando a `TemplateData/sin-hilos.worker.js`, un archivo vacío.
+
+**Motivo:** con *Decompression Fallback* activado, el cargador de Unity 6000.0.38f1 siempre descarga `workerUrl`, aunque el juego no use hilos. La plantilla *Default* solo define ese valor cuando hay hilos, así que el cargador falla con `TypeError: Cannot read properties of undefined (reading 'match')` y la barra de carga se queda vacía.
+
+No hay que borrar esta plantilla ni volver a *Default* mientras se use esta versión de Unity. Si se actualiza Unity, se puede comprobar si el fallo sigue generando una build con la plantilla *Default*.
 
 ## 3. Generar la build
 
@@ -32,8 +41,10 @@ El resultado debe tener `index.html`, `Build/` y `TemplateData/`.
 itch.io exige que `index.html` esté en la **raíz** del zip, no dentro de una carpeta. Desde la carpeta del proyecto de Unity:
 
 ```bash
-cd Builds/WebGL && tar -a -c -f ../biorremediacion-webgl.zip *
+cd Builds/WebGL && /c/Windows/System32/tar.exe -a -c -f ../biorremediacion-webgl.zip index.html Build TemplateData
 ```
+
+> En Git Bash hay que llamar al `tar.exe` de Windows con su ruta completa: el `tar` de Git Bash no crea archivos .zip, aunque el nombre termine en `.zip`. Se nombran solo `index.html`, `Build` y `TemplateData` para no meter en el zip otros archivos que haya en la carpeta.
 
 > No usar *Enviar a → Carpeta comprimida* ni `Compress-Archive` de PowerShell 5.1: guardan las rutas con `\` y itch.io puede no encontrar los archivos.
 

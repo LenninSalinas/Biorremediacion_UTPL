@@ -58,7 +58,7 @@ btnIniciarSesion.addEventListener('click', async() => {
         mensajeError.innerText = "!Bienvenido! Cargando simulador...";
         localStorage.setItem("sesion_activa", true);
         setTimeout(() => {
-            window.location.href = "https://jefferson-999.itch.io/biorremediacion";
+            window.location.href = "https://biorremediacion-utpl.itch.io/biorremediacion";
         }, 1000);
     } else {
         // Si falló
