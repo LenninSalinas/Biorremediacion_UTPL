@@ -2,7 +2,7 @@
 
 **Proyecto:** Simulación de Biorremediación (Unity 3D)
 
-**Hecho por:** Lennin Stalin Salinas Quinche
+**Hecho por:** Lennin Salinas  Y Jefferson Sanchez
 
 **Carrera:** Computación - UTPL
 
