@@ -109,7 +109,7 @@ Elegir según si el inicio de sesión debe ser obligatorio o solo un punto de en
 
 ## 6. Después de publicar
 
-1. Actualizar la redirección de la web en `web/js/loginController.js` con la nueva URL `https://<usuario>.itch.io/biorremediacion` y desplegar en Vercel.
+1. Actualizar la redirección de la web en `web/public/js/loginController.js` con la nueva URL `https://<usuario>.itch.io/biorremediacion` y desplegar en Vercel. Ya está hecho: la web redirige a `https://biorremediacion-utpl.itch.io/biorremediacion`.
 2. Despublicar o eliminar la página anterior (`jefferson-999.itch.io/biorremediacion`) para que no queden dos versiones.
 
 ## Nuevas versiones

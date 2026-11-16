@@ -14,10 +14,12 @@ Esta carpeta reúne la documentación técnica del proyecto.
 
 - [Limpieza del proyecto](limpieza-proyecto.md): elementos eliminados (escenas, scripts, paquetes y versiones compiladas) y cómo se comprobó que no se usaban.
 - [Publicación en itch.io](publicacion-itchio.md): cómo generar la build web, empaquetarla y publicarla en la página institucional.
+- [Prueba de clonado desde cero](prueba-clonado.md): registro de la descarga, apertura y compilación del proyecto en un equipo limpio.
 
 ## Requisitos para trabajar en el proyecto
 
 - **Git LFS** instalado en cada equipo (`git lfs install`, una sola vez). Sin él, los modelos, texturas, audio, terrenos e iluminación se descargan como punteros y Unity no puede leerlos.
+- **Clonar en una ruta corta** (por ejemplo `C:\proyectos`): algunas rutas del proyecto tienen 160 caracteres y Windows no admite más de 260 si no están activadas las rutas largas. Alternativa: `git config --global core.longpaths true`.
 - **Unity 6** (6000.0.38f1).
 - **Node.js** para ejecutar la web en local (`npm install` dentro de `web/`).
 
