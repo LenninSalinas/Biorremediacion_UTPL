@@ -10,25 +10,39 @@
 
 ---
 
+## Repositorio
+
+| Carpeta | Contenido |
+|---|---|
+| `simulador/` | Proyecto de Unity 6 (6000.0.38f1) en `simulador/Biorremediacion_UTPL`. |
+| `web/` | Página de inicio de sesión (Express) desplegada en Vercel. |
+| `documentacion/` | Documentación técnica: limpieza del proyecto, publicación en itch.io, prueba de clonado. |
+
+- **Web (inicio de sesión):** <https://biorremediacion-utpl.vercel.app>
+- **Simulador (itch.io):** <https://biorremediacion-utpl.itch.io/biorremediacion>
+
+Para clonar y abrir el proyecto, ver los requisitos en [documentacion/README.md](documentacion/README.md). Hace falta **Git LFS** instalado antes de clonar.
+
+---
+
 ## Lista de scripts
 
 1. Movement.cs
 2. Camera_Controller.cs
-3. SimpleCameraController.cs
-4. WaterZone.cs
-5. WaterProbe.cs
-6. MultiparameterScreen.cs
-7. BottleFill.cs
-8. AgarradorTelescopico.cs
-9. Grab.cs
-10. HUDController.cs
-11. InformationObject.cs
-12. FormularioUIToolkitController.cs
-13. FadeInOut.cs
-14. BillboardText.cs
-15. GPS_IN_GAME.cs
-16. WaterfallAudio.cs
-17. Change_Scenes.cs
+3. WaterZone.cs
+4. WaterProbe.cs
+5. MultiparameterScreen.cs
+6. BottleFill.cs
+7. AgarradorTelescopico.cs
+8. Grab.cs
+9. HUDController.cs
+10. InformationObject.cs
+11. FormularioUIToolkitController.cs
+12. BillboardText.cs
+13. GPS_IN_GAME.cs
+14. Change_Scenes.cs
+
+Los scripts `SimpleCameraController.cs`, `FadeInOut.cs` y `WaterfallAudio.cs` se eliminaron porque ninguna escena ni prefab los usaba (ver [documentacion/limpieza-proyecto.md](documentacion/limpieza-proyecto.md)).
 
 ---
 
@@ -39,9 +53,6 @@ Es el script que hace que el jugador camine, salte y gire con el mouse. Usa el R
 
 **Camera_Controller.cs**
 Este solo se encarga de mover la cámara hacia arriba/abajo cuando mueves el mouse (el "pitch"). Es chiquito, básicamente un Clamp para que no puedas girar la cámara más allá de cierto ángulo y quedar mirando para atrás.
-
-**SimpleCameraController.cs**
-Esta es la cámara de vuelo libre que trae Unity de ejemplo (viene de sus templates oficiales), la dejamos para poder volar por el mapa y revisar cosas en modo edición. No es la cámara que usa el jugador normalmente.
 
 > Nota: Movement.cs mueve al jugador hacia los lados (yaw) y Camera_Controller mueve la cámara arriba/abajo , o sea están divididos entre dos scripts. Funciona bien pero hay que tenerlo claro para no duplicar código de sensibilidad del mouse en otro lado más adelante.
 
@@ -91,9 +102,6 @@ Un script bien simple, solo guarda el nombre, tamaño y especificaciones de un o
 **FormularioUIToolkitController.cs**
 Maneja el formulario que aparece cuando estás dentro de una zona de agua y le das a F. Usa UI Toolkit (el sistema nuevo de UI de Unity). Pausa el juego, libera el cursor y le pone el foco al primer campo del formulario para que puedas escribir directo.
 
-**FadeInOut.cs**
-Sirve para hacer fundidos (fade in / fade out) en pantallas o imágenes del Canvas, usando una lista de "a los cuántos segundos aparece" y "a los cuántos segundos desaparece".
-
 **BillboardText.cs**
 Este es chiquito pero útil: sirve para que un texto que está puesto en el mundo (por ejemplo un letrero o una etiqueta flotante sobre algún objeto) siempre quede mirando hacia la cámara, sin importar hacia dónde te muevas. Busca la cámara principal (Camera.main) sola si no le asignas una a mano, y en LateUpdate le copia la rotación de la cámara (con un giro de 180° para que el texto no se vea al revés).
 
@@ -110,15 +118,14 @@ Convierte la posición del jugador en Unity a coordenadas de latitud/longitud/al
 
 ---
 
-## Audio y cambio de escenas
+## Cambio de escenas
 
-**WaterfallAudio.cs**
-Pone a sonar el audio de la cascada con un pequeño retraso (delay), para que combine mejor con la animación del agua cayendo.
+El sonido del riachuelo y la cascada de `DemoScene` no usa scripts: lo reproducen directamente los componentes AudioSource de los prefabs `AudioSources` y `Water 1 1`.
 
 **Change_Scenes.cs**
 Es el que hace la transición del menú principal al juego. Primero carga la escena del terreno (en modo Single, para limpiar el menú) y después carga la escena del jugador encima (en modo Additive), usando una corrutina para esperar a que cada una termine de cargar.
 
-> Nota: los nombres de las escenas están escritos directo en el código ("DemoScene", "SampleScene 1", con el espacio incluido). Si alguien renombra la escena en Unity esto se rompe y no muestra ningún mensaje de error claro, solo se queda pegado cargando. Se podría mejorar poniendo esos nombres como variables configurables desde el Inspector.
+> Nota: los nombres de las escenas están escritos directo en el código ("DemoScene" y "SampleScene"). Si alguien renombra la escena en Unity esto se rompe y no muestra ningún mensaje de error claro, solo se queda pegado cargando. Se podría mejorar poniendo esos nombres como variables configurables desde el Inspector.
 
 ---
 
@@ -133,7 +140,6 @@ Es el que hace la transición del menú principal al juego. Primero carga la esc
 7. Estando en la zona de agua, puedes abrir el formulario con F (FormularioUIToolkitController) para anotar los datos.
 8. En cualquier momento puedes apuntar a un objeto y presionar la tecla de info para ver sus datos (esto lo maneja Grab + HUDController + InformationObject).
 9. Los letreros y etiquetas de texto en el mundo (con BillboardText) se van girando solos para quedar siempre mirando hacia donde estés parado.
-10. FadeInOut y WaterfallAudio le dan más ambiente a la experiencia.
 
 ---
 

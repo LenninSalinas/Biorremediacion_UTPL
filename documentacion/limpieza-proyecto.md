@@ -101,6 +101,8 @@ No se eliminó nada: la carpeta `web/node_modules/` no estaba en el repositorio 
 | `web/server.js` y `web/public/` | Se reemplazó `express.static(__dirname)`, que publicaba toda la carpeta (incluidos `server.js` y `package.json`). El frontend (`index.html`, `css/`, `js/` e `imgs/`) se movió a `web/public/`, que es lo único que se publica y la carpeta que Vercel sirve desde su CDN. |
 | `web/vercel.json` | Se quitó la redirección de `/api/*` a `server.js`, que con el preset Express ya no hace falta, y se añadieron las cabeceras de seguridad para los archivos estáticos. |
 | `simulador/.../Assets/Scripts/Change_Scenes.cs` | Se actualizó el nombre de la escena cargada de `"SampleScene 1"` a `"SampleScene"` tras su renombre. |
+| `simulador/.../Assets/BOKI/LowPolyNature/Audio/Clips/` | Se recuperaron `water_stream_sfx.wav` y `waterfall_sfx.wav` del paquete BOKI Low Poly Nature, con sus GUID originales. `DemoScene` los usaba, pero nunca se habían subido al repositorio, así que ninguna build tenía sonido. `boki_melody_1.wav` no se recuperó porque nada lo usa. |
+| `simulador/.../Assets/WebGLTemplates/UTPL/` | Plantilla web propia que corrige un fallo de Unity 6000.0.38f1 por el que la build se quedaba cargando en itch.io (ver [publicacion-itchio.md](publicacion-itchio.md)). |
 
 ## Cómo recuperar un elemento
 
