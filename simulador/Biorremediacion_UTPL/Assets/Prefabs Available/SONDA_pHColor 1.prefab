@@ -99,6 +99,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b69c35cc3dc7a00489da33ad610d0ad9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3482454626908733475}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b69c35cc3dc7a00489da33ad610d0ad9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 603383433771865510}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b69c35cc3dc7a00489da33ad610d0ad9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5764188224954342232}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b69c35cc3dc7a00489da33ad610d0ad9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5881126335913330641}
   m_SourcePrefab: {fileID: 100100000, guid: b69c35cc3dc7a00489da33ad610d0ad9, type: 3}
 --- !u!1 &2347864299828217002 stripped
 GameObject:
@@ -165,8 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a72566f4d276b4c9661880c989df26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipoSonda: pH
-  pantallaMultiparametro: {fileID: 0}
+  probeType: 0
+  screen: {fileID: 0}
 --- !u!114 &3482454626908733475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,3 +194,47 @@ MonoBehaviour:
     l\xEDquidas, lo cual es fundamental para controlar reacciones enzim\xE1ticas
     en bioqu\xEDmica y evaluar la salud ecol\xF3gica y el grado de contaminaci\xF3n
     en cuerpos de agua naturales"
+--- !u!114 &603383433771865510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2347864299828217002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5752a5fc642c34882402c00c8ea22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 0.3, g: 1, b: 0.3, a: 1}
+  intensity: 0.6
+--- !u!114 &-5764188224954342232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2347864299828217002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b0ec7da544b2642a34a29d2e5bcc5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 6
+  holdOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &5881126335913330641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2347864299828217002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf3eccab61c2fc14493636faf36b2e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zone: {fileID: 0}
+  delayInsideZone: 2
+  delayOutsideZone: 30
+  returnDuration: 0.5

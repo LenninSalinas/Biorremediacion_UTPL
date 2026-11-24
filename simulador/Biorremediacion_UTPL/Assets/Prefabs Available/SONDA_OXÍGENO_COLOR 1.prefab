@@ -135,6 +135,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9677c83394b8a91428f1fceceefc18ba, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1724332893719196012}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9677c83394b8a91428f1fceceefc18ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -587178270832688400}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9677c83394b8a91428f1fceceefc18ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8956858550242768106}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9677c83394b8a91428f1fceceefc18ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3342074917299745022}
   m_SourcePrefab: {fileID: 100100000, guid: 9677c83394b8a91428f1fceceefc18ba, type: 3}
 --- !u!1 &8582711752347394932 stripped
 GameObject:
@@ -201,8 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a72566f4d276b4c9661880c989df26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipoSonda: O2
-  pantallaMultiparametro: {fileID: 0}
+  probeType: 1
+  screen: {fileID: 0}
 --- !u!114 &1724332893719196012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,3 +229,47 @@ MonoBehaviour:
   specifications: "Sirve para medir el ox\xEDgeno molecular libre en el agua. Sus
     funciones clave son evaluar la salud del ecosistema, calcular la contaminaci\xF3n
     org\xE1nica y controlar procesos biol\xF3gicos"
+--- !u!114 &-587178270832688400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8582711752347394932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5752a5fc642c34882402c00c8ea22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 0.3, g: 1, b: 0.3, a: 1}
+  intensity: 0.6
+--- !u!114 &8956858550242768106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8582711752347394932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b0ec7da544b2642a34a29d2e5bcc5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 6
+  holdOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &3342074917299745022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8582711752347394932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf3eccab61c2fc14493636faf36b2e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zone: {fileID: 0}
+  delayInsideZone: 2
+  delayOutsideZone: 30
+  returnDuration: 0.5

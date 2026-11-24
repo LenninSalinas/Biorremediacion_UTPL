@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 2027595770657599960}
   - component: {fileID: 7317772278401253704}
   - component: {fileID: 3915562574143866825}
+  - component: {fileID: -6994289096930130532}
+  - component: {fileID: 7106243822684309316}
   m_Layer: 6
   m_Name: Contenedor_botella_vidrio 1
   m_TagString: Grabbable_Object
@@ -138,6 +140,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   liquidMesh: {fileID: 6461528591729678497}
   isFilled: 0
+--- !u!114 &-6994289096930130532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2148880998552853945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5752a5fc642c34882402c00c8ea22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 0.3, g: 1, b: 0.3, a: 1}
+  intensity: 0.6
+--- !u!114 &7106243822684309316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2148880998552853945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b0ec7da544b2642a34a29d2e5bcc5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 4
+  holdOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6405153009155165381
 GameObject:
   m_ObjectHideFlags: 0

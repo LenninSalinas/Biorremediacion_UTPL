@@ -1175,6 +1175,9 @@ GameObject:
   - component: {fileID: 4934054487633558809}
   - component: {fileID: 8572037922481937730}
   - component: {fileID: 7242529710911632090}
+  - component: {fileID: 3312675094948834169}
+  - component: {fileID: 1191032938688748846}
+  - component: {fileID: 8142228268521194031}
   m_Layer: 0
   m_Name: Contenedor_GPS 1 1
   m_TagString: Grabbable_Object
@@ -1303,6 +1306,50 @@ MonoBehaviour:
   longitudOrigen: -79.2012
   altitudBase: 2060
   metrosPorGrado: 111000
+--- !u!114 &3312675094948834169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6519578242586468302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5752a5fc642c34882402c00c8ea22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 0.3, g: 1, b: 0.3, a: 1}
+  intensity: 0.6
+--- !u!114 &1191032938688748846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6519578242586468302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b0ec7da544b2642a34a29d2e5bcc5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  holdOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &8142228268521194031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6519578242586468302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf3eccab61c2fc14493636faf36b2e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zone: {fileID: 0}
+  delayInsideZone: 2
+  delayOutsideZone: 30
+  returnDuration: 0.5
 --- !u!1 &7943009416519106349
 GameObject:
   m_ObjectHideFlags: 0

@@ -1932,6 +1932,9 @@ GameObject:
   - component: {fileID: 7735704545354828356}
   - component: {fileID: 4068835586241918961}
   - component: {fileID: 5331293902672888095}
+  - component: {fileID: 8319413476099256937}
+  - component: {fileID: 685898041999373993}
+  - component: {fileID: 883346182507790130}
   m_Layer: 0
   m_Name: MULTIPARAMETRO_2 1
   m_TagString: Grabbable_Object
@@ -2033,9 +2036,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d85e79d75909944a10477f1faa2e96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textoPH: {fileID: 3878709213570272405}
-  textoO2: {fileID: 1494455346691831866}
-  textoCond: {fileID: 7138724846471243028}
+  phText: {fileID: 3878709213570272405}
+  dissolvedOxygenText: {fileID: 1494455346691831866}
+  conductivityText: {fileID: 7138724846471243028}
 --- !u!114 &5331293902672888095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2053,6 +2056,50 @@ MonoBehaviour:
   specifications: "Sirve para medir varias variables a la vez de forma r\xE1pida
     y exacta. Seg\xFAn el campo donde se use, puede ser un equipo para analizar el
     agua o un aparato m\xE9dico para vigilar a un paciente"
+--- !u!114 &8319413476099256937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8473648422204218166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5752a5fc642c34882402c00c8ea22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 0.3, g: 1, b: 0.3, a: 1}
+  intensity: 0.6
+--- !u!114 &685898041999373993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8473648422204218166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b0ec7da544b2642a34a29d2e5bcc5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  holdOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &883346182507790130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8473648422204218166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf3eccab61c2fc14493636faf36b2e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zone: {fileID: 0}
+  delayInsideZone: 2
+  delayOutsideZone: 30
+  returnDuration: 0.5
 --- !u!1 &8846815315744549075
 GameObject:
   m_ObjectHideFlags: 0
