@@ -157,6 +157,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 47b763bd3ea5a0640b784adf5b0ad172, type: 3}
       insertIndex: -1
       addedObject: {fileID: 520010950900583333}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 47b763bd3ea5a0640b784adf5b0ad172, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4081790442970986829}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 47b763bd3ea5a0640b784adf5b0ad172, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5919843356710162990}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 47b763bd3ea5a0640b784adf5b0ad172, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5359367952822695840}
   m_SourcePrefab: {fileID: 100100000, guid: 47b763bd3ea5a0640b784adf5b0ad172, type: 3}
 --- !u!4 &263002719518298693 stripped
 Transform:
@@ -228,6 +237,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c78702b9e55a99f49a4633c335a890fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puntaAgarrador: {fileID: 3678092235761823118}
-  distanciaDeteccionSonda: 4
-  offsetOxigeno: {x: 0, y: 0, z: 0}
+  tip: {fileID: 3678092235761823118}
+  probeReach: 4
+  probeScaleAtTip: 6
+--- !u!114 &4081790442970986829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643327796447922431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5752a5fc642c34882402c00c8ea22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 0.3, g: 1, b: 0.3, a: 1}
+  intensity: 0.6
+--- !u!114 &5919843356710162990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643327796447922431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b0ec7da544b2642a34a29d2e5bcc5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 5
+  holdOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &5359367952822695840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643327796447922431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf3eccab61c2fc14493636faf36b2e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zone: {fileID: 0}
+  delayInsideZone: 2
+  delayOutsideZone: 30
+  returnDuration: 0.5

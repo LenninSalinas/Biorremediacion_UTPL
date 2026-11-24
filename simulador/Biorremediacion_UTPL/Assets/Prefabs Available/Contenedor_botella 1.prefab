@@ -101,6 +101,8 @@ GameObject:
   - component: {fileID: 5724880554958705055}
   - component: {fileID: 27582651794156278}
   - component: {fileID: 5433719011715777661}
+  - component: {fileID: 6094256540269973100}
+  - component: {fileID: 6167911737562062106}
   m_Layer: 6
   m_Name: Contenedor_botella 1
   m_TagString: Grabbable_Object
@@ -225,6 +227,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   liquidMesh: {fileID: 6894776177651263732}
   isFilled: 0
+--- !u!114 &6094256540269973100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3879575513493488819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5752a5fc642c34882402c00c8ea22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 0.3, g: 1, b: 0.3, a: 1}
+  intensity: 0.6
+--- !u!114 &6167911737562062106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3879575513493488819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b0ec7da544b2642a34a29d2e5bcc5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 4
+  holdOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6894776177651263732
 GameObject:
   m_ObjectHideFlags: 0

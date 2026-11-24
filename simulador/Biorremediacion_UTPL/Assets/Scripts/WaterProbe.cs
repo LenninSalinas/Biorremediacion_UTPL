@@ -1,55 +1,37 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
+/// <summary>
+/// Water probe: when it enters a WaterZone it sends a sample to the multiparameter
+/// screen, and clears its own reading when it leaves the water.
+/// </summary>
+[DisallowMultipleComponent]
 public class WaterProbe : MonoBehaviour
 {
-    [Header("Configuración de la Sonda")]
-    [Tooltip("Escribe exactamente: pH, O2 o Conductividad")]
-    public string tipoSonda; 
+    [Header("Probe")]
+    [SerializeField] private ProbeType probeType;
 
-    [Header("Referencias")]
-    public MultiparameterScreen pantallaMultiparametro;
+    [Header("References")]
+    [FormerlySerializedAs("pantallaMultiparametro")]
+    [SerializeField] private MultiparameterScreen screen;
+
+    public ProbeType Type => probeType;
+
+    private void Awake()
+    {
+        if (screen == null)
+            Debug.LogWarning($"{name}: no MultiparameterScreen assigned, readings will not be shown.", this);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Detectamos si tocamos algo con la etiqueta "Water"
-        if (other.CompareTag("Water"))
-        {
-            // Extraemos el script "WaterZone" del cubo de agua que tocamos
-            WaterZone zonaDeAgua = other.GetComponent<WaterZone>();
-
-            if (zonaDeAgua != null && pantallaMultiparametro != null)
-            {
-                float valorExtraido = 0f;
-
-                // Dependiendo de qué sonda sea, sacamos un valor u otro del lago
-                switch (tipoSonda)
-                {
-                    case "pH":
-                        valorExtraido = zonaDeAgua.nivelPH;
-                        break;
-                    case "O2":
-                        valorExtraido = zonaDeAgua.nivelO2;
-                        break;
-                    case "Conductividad":
-                        valorExtraido = zonaDeAgua.nivelConductividad;
-                        break;
-                }
-
-                // Mandamos el valor correcto a la pantalla
-                pantallaMultiparametro.ActualizarMedicion(tipoSonda, valorExtraido);
-            }
-        }
+        if (screen == null || !other.TryGetComponent(out WaterZone zone)) return;
+        screen.ShowReading(probeType, zone.Sample(probeType));
     }
 
     private void OnTriggerExit(Collider other)
     {
-        // Al sacar la sonda del agua, limpiamos la pantalla
-        if (other.CompareTag("Water"))
-        {
-            if (pantallaMultiparametro != null)
-            {
-                pantallaMultiparametro.ResetearPantalla();
-            }
-        }
+        if (screen == null || !other.TryGetComponent(out WaterZone _)) return;
+        screen.ClearReading(probeType);
     }
 }

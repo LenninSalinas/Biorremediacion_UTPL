@@ -1,41 +1,63 @@
-using UnityEngine;
+using System;
+using System.Globalization;
 using TMPro;
+using UnityEngine;
+using UnityEngine.Serialization;
 
+/// <summary>Multiparameter display: shows the latest reading for each probe type.</summary>
+[DisallowMultipleComponent]
 public class MultiparameterScreen : MonoBehaviour
 {
-    [Header("Conexión con la Interfaz")]
-    public TextMeshProUGUI textoPH;
-    public TextMeshProUGUI textoO2;
-    public TextMeshProUGUI textoCond;
+    private const string EmptyValue = "--";
 
-    void Start()
+    [Header("UI")]
+    [FormerlySerializedAs("textoPH")]
+    [SerializeField] private TextMeshProUGUI phText;
+    [FormerlySerializedAs("textoO2")]
+    [SerializeField] private TextMeshProUGUI dissolvedOxygenText;
+    [FormerlySerializedAs("textoCond")]
+    [SerializeField] private TextMeshProUGUI conductivityText;
+
+    private void Awake() => ClearAll();
+
+    public void ShowReading(ProbeType type, float value) => SetValue(type, FormatValue(type, value));
+
+    public void ClearReading(ProbeType type) => SetValue(type, EmptyValue);
+
+    public void ClearAll()
     {
-        // Al iniciar la simulación la pantalla muestra guiones 
-        // indicando que no hay sondas leyendo datos aún.
-        ResetearPantalla();
+        foreach (ProbeType type in (ProbeType[])Enum.GetValues(typeof(ProbeType)))
+            ClearReading(type);
     }
 
-    public void ActualizarMedicion(string tipoSonda, float valor)
+    private void SetValue(ProbeType type, string value)
     {
-        switch (tipoSonda)
-        {
-            case "pH":
-                textoPH.text = "pH: " + valor.ToString("F2");
-                break;
-            case "O2":
-                textoO2.text = "O2: " + valor.ToString("F2") + " mg/L";
-                break;
-            case "Conductividad":
-                textoCond.text = "Cond: " + valor.ToString("F0") + " µS/cm";
-                break;
-        }
+        TextMeshProUGUI target = GetText(type);
+        if (target != null) target.text = $"{GetLabel(type)}: {value}";
     }
 
-    // Método para limpiar la pantalla
-    public void ResetearPantalla()
+    private TextMeshProUGUI GetText(ProbeType type) => type switch
     {
-        textoPH.text = "pH: --";
-        textoO2.text = "O2: --";
-        textoCond.text = "Cond: --";
-    }
+        ProbeType.Ph => phText,
+        ProbeType.DissolvedOxygen => dissolvedOxygenText,
+        ProbeType.Conductivity => conductivityText,
+        _ => null
+    };
+
+    private static string GetLabel(ProbeType type) => type switch
+    {
+        ProbeType.Ph => "pH",
+        ProbeType.DissolvedOxygen => "O2",
+        ProbeType.Conductivity => "Cond",
+        _ => type.ToString()
+    };
+
+    // Invariant culture: always "7.50", never "7,50", regardless of the player's system language.
+    private static string FormatValue(ProbeType type, float value) => type switch
+    {
+        ProbeType.Ph => value.ToString("F2", CultureInfo.InvariantCulture),
+        ProbeType.DissolvedOxygen => value.ToString("F2", CultureInfo.InvariantCulture) + " mg/L",
+        ProbeType.Conductivity => value.ToString("F0", CultureInfo.InvariantCulture) + " µS/cm",
+        _ => value.ToString(CultureInfo.InvariantCulture)
+    };
 }

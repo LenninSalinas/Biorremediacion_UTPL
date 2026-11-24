@@ -99,6 +99,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f1aaa54e8545adb4d987c7001874e0e9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8884475009058791919}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f1aaa54e8545adb4d987c7001874e0e9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 946708023276318382}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f1aaa54e8545adb4d987c7001874e0e9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1975367276415811858}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f1aaa54e8545adb4d987c7001874e0e9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2607268526878176549}
   m_SourcePrefab: {fileID: 100100000, guid: f1aaa54e8545adb4d987c7001874e0e9, type: 3}
 --- !u!1 &215209751090336870 stripped
 GameObject:
@@ -165,8 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a72566f4d276b4c9661880c989df26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipoSonda: Conductividad
-  pantallaMultiparametro: {fileID: 0}
+  probeType: 2
+  screen: {fileID: 0}
 --- !u!114 &8884475009058791919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,3 +193,47 @@ MonoBehaviour:
   specifications: "Mide la capacidad de un l\xEDquido o soluci\xF3n para conducir
     electricidad, lo que permite conocer la cantidad de iones, sales o minerales
     disueltos"
+--- !u!114 &946708023276318382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215209751090336870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5752a5fc642c34882402c00c8ea22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightColor: {r: 0.3, g: 1, b: 0.3, a: 1}
+  intensity: 0.6
+--- !u!114 &1975367276415811858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215209751090336870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b0ec7da544b2642a34a29d2e5bcc5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 6
+  holdOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &2607268526878176549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215209751090336870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf3eccab61c2fc14493636faf36b2e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zone: {fileID: 0}
+  delayInsideZone: 2
+  delayOutsideZone: 30
+  returnDuration: 0.5
